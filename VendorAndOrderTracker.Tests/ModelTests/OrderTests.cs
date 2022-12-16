@@ -12,7 +12,10 @@ namespace VendorAndOrderTracker.Tests
     public void OrderConstructor_CreateOrderObjectInstance_Order()
     {
       string titleInput = "Bread";
-      Order newOrder = new Order(titleInput);
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -20,8 +23,44 @@ namespace VendorAndOrderTracker.Tests
     public void GetTitle_ReturnsTitleProperty_String()
     {
       string titleInput = "Bread";
-      Order newOrder = new Order(titleInput);
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
       Assert.AreEqual(titleInput, newOrder.Title);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string titleInput = "Bread";
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
+      Assert.AreEqual(titleInput, newOrder.Description);
+    }
+
+    [TestMethod]
+    public void GetTitle_ReturnsPriceProperty_Int()
+    {
+      string titleInput = "Bread";
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
+      Assert.AreEqual(titleInput, newOrder.Price);
+    }
+
+    [TestMethod]
+    public void GetTitle_ReturnsDateProperty_DateTime()
+    {
+      string titleInput = "Bread";
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
+      Assert.AreEqual(titleInput, newOrder.Date);
     }
   }
 }
