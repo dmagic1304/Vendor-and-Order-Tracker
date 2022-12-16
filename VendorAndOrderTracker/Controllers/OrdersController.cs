@@ -10,6 +10,7 @@ namespace VendorAndOrderTracker.Controllers
     {
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
-    }
-  }
+    }   
+
+  } 
 }
