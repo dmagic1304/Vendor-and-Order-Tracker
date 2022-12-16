@@ -60,5 +60,15 @@ namespace VendorAndOrderTracker.TestTools
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(result, vendorList);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorIdProperty_Int()
+    {
+      string nameInput = "Super Caffe";
+      string descriptionInput = "Ordered 3 items";
+      Vendor newVendor = new Vendor(nameInput, descriptionInput); 
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
