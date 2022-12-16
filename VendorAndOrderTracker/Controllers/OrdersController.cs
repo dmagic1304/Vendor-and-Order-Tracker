@@ -12,5 +12,12 @@ namespace VendorAndOrderTracker.Controllers
       return View(vendor);
     }   
 
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      return View(order);
+    }
+
   } 
 }
