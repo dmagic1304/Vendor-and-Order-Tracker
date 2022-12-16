@@ -25,5 +25,11 @@ namespace VendorAndOrderTracker.Controllers
       Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index", "Home");
     }
+
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Show()
+    {
+      return View();
+    }
   }
 }
