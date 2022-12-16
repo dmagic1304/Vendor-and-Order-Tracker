@@ -77,7 +77,7 @@ namespace VendorAndOrderTracker.TestTools
       string nameInput = "Super Caffe";
       string descriptionInput = "Ordered 3 items";
       Vendor newVendor = new Vendor(nameInput, descriptionInput); 
-      int result = Vendor.Find(1);
+      Vendor result = Vendor.Find(1);
       Assert.AreEqual(result, newVendor);
     }
   }

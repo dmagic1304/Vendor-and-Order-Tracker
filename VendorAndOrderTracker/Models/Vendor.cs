@@ -30,5 +30,9 @@ namespace VendorAndOrderTracker.Models
       _allVendors.Clear();
     }
 
+    public static Vendor Find(int id)
+    {
+      return _allVendors[id -1];
+    }
   }
 }
