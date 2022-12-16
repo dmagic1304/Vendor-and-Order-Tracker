@@ -70,5 +70,15 @@ namespace VendorAndOrderTracker.TestTools
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsVendorBasedOnId_Vendor()
+    {
+      string nameInput = "Super Caffe";
+      string descriptionInput = "Ordered 3 items";
+      Vendor newVendor = new Vendor(nameInput, descriptionInput); 
+      int result = Vendor.Find(1);
+      Assert.AreEqual(result, newVendor);
+    }
   }
 }
