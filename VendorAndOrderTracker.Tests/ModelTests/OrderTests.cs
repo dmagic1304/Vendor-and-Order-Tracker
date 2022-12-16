@@ -80,5 +80,29 @@ namespace VendorAndOrderTracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(result, orderList);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsOrderIdProperty_Int()
+    {
+      string titleInput = "Bread";
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsVendorBasedOnId_Vendor()
+    {
+      string titleInput = "Bread";
+      string descriptionInput = "4 loafs of bread";
+      int priceInput = 15;
+      DateTime dateInput = new DateTime(2022, 12, 16);
+      Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
+      Order result = Order.Find(1);
+      Assert.AreEqual(result, newOrder);
+    }
   }
 }
