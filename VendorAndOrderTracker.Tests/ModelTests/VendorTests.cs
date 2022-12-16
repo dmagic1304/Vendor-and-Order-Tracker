@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using VendorAndOrderTracker.Models;
 
-namespace VendorAndOrderTracker.TestTools
+namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
   public class VendorTests : IDisposable

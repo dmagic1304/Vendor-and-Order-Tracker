@@ -6,8 +6,13 @@ using VendorAndOrderTracker.Models;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreateOrderObjectInstance_Order()
     {
@@ -73,7 +78,7 @@ namespace VendorAndOrderTracker.Tests
       Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
       List<Order> orderList = new List<Order>{newOrder};
       List<Order> result = Order.GetAll();
-      CollectionAssert.AreEqual(result, orderList);      
+      CollectionAssert.AreEqual(result, orderList);
     }
   }
 }

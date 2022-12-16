@@ -10,12 +10,26 @@ namespace VendorAndOrderTracker.Models
     public int Price {get; set;}
     public DateTime Date {get; set;}
 
+    private static List<Order> _allOrders = new List<Order>{};
+
     public Order(string title, string description, int price, DateTime date)
     {
       Title = title;
       Description = description;
       Price = price;
       Date = date;
+      _allOrders.Add(this);
     }
+
+    public static List<Order> GetAll()
+    {
+      return _allOrders;
+    }
+
+    public static void ClearAll()
+    {
+      _allOrders.Clear();
+    }
+
   }
 }
