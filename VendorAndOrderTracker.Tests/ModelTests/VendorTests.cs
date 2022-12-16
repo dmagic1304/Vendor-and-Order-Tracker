@@ -10,8 +10,16 @@ namespace VendorAndoRderTracker.TestTools
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor();
+      Vendor newVendor = new Vendor("test");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
+
+    [TestMethod]
+    public void GetName_ReturnsNameProperty_String()
+    {
+      string nameInput = "Super Caffe";
+      Vendor newVendor = new Vendor(nameInput);
+      Assert.AreEqual(nameInput, newVendor.Name);
     }
   }
 }
