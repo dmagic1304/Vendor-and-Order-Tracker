@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using VendorAndOrderTracker.Models;
 
 namespace VendorAndOrderTracker.TestTools
@@ -32,6 +33,16 @@ namespace VendorAndOrderTracker.TestTools
       string descriptionInput = "Ordered 3 items";
       Vendor newVendor = new Vendor(nameInput, descriptionInput);
       Assert.AreEqual(descriptionInput, newVendor.Description);
+    }
+
+    [TestMethod]
+    public void GetOrders_ReturnsEmptyOrdersProperty_List()
+    {
+      string nameInput = "Super Caffe";
+      string descriptionInput = "Ordered 3 items";
+      Vendor newVendor = new Vendor(nameInput, descriptionInput);
+      List<Vendor> newList = new List<Vendor> {};
+      CollectionAssert.AreEqual(newList, newVendor.Orders);
     }
   }
 }
