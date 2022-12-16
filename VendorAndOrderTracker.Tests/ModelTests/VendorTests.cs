@@ -10,20 +10,23 @@ namespace VendorAndOrderTracker.TestTools
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test", "test");
+      string nameInput = "test";
+      string descriptionInput = "test";
+      Vendor newVendor = new Vendor(nameInput, descriptionInput);
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
     [TestMethod]
     public void GetName_ReturnsNameProperty_String()
     {
-      string nameInput = "Super Caffe";
-      Vendor newVendor = new Vendor(nameInput, "test");
+      string nameInput = "Super Caffe";      
+      string descriptionInput = "test";
+      Vendor newVendor = new Vendor(nameInput, descriptionInput);
       Assert.AreEqual(nameInput, newVendor.Name);
     }
 
     [TestMethod]
-    public void GetName_ReturnsNameProperty_String()
+    public void GetDescripton_ReturnsDescriptionProperty_String()
     {
       string nameInput = "Super Caffe";
       string descriptionInput = "Ordered 3 items";
