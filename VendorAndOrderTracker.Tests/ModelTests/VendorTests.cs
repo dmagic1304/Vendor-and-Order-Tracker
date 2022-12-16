@@ -6,8 +6,13 @@ using VendorAndOrderTracker.Models;
 namespace VendorAndOrderTracker.TestTools
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -52,7 +57,7 @@ namespace VendorAndOrderTracker.TestTools
       string descriptionInput = "Ordered 3 items";
       Vendor newVendor = new Vendor(nameInput, descriptionInput); 
       List<Vendor> vendorList = new List<Vendor> {newVendor};
-      List<Vendor> result = newVendor.GetAll();
+      List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(result, vendorList);
     }
   }
