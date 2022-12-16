@@ -38,7 +38,7 @@ namespace VendorAndOrderTracker.Tests
       int priceInput = 15;
       DateTime dateInput = new DateTime(2022, 12, 16);
       Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
-      Assert.AreEqual(titleInput, newOrder.Description);
+      Assert.AreEqual(descriptionInput, newOrder.Description);
     }
 
     [TestMethod]
@@ -49,7 +49,7 @@ namespace VendorAndOrderTracker.Tests
       int priceInput = 15;
       DateTime dateInput = new DateTime(2022, 12, 16);
       Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
-      Assert.AreEqual(titleInput, newOrder.Price);
+      Assert.AreEqual(priceInput, newOrder.Price);
     }
 
     [TestMethod]
@@ -60,7 +60,7 @@ namespace VendorAndOrderTracker.Tests
       int priceInput = 15;
       DateTime dateInput = new DateTime(2022, 12, 16);
       Order newOrder = new Order(titleInput, descriptionInput, priceInput, dateInput);
-      Assert.AreEqual(titleInput, newOrder.Date);
+      Assert.AreEqual(dateInput, newOrder.Date);
     }
   }
 }
