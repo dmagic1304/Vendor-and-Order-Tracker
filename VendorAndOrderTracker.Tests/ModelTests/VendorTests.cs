@@ -36,13 +36,24 @@ namespace VendorAndOrderTracker.TestTools
     }
 
     [TestMethod]
-    public void GetOrders_ReturnsEmptyOrdersProperty_List()
+    public void GetOrders_ReturnsEmptyOrdersProperty_OrderList()
     {
       string nameInput = "Super Caffe";
       string descriptionInput = "Ordered 3 items";
       Vendor newVendor = new Vendor(nameInput, descriptionInput);
       List<Vendor> newList = new List<Vendor> {};
       CollectionAssert.AreEqual(newList, newVendor.Orders);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsListOfAllVendorObjects_VendorList()
+    {
+      string nameInput = "Super Caffe";
+      string descriptionInput = "Ordered 3 items";
+      Vendor newVendor = new Vendor(nameInput, descriptionInput); 
+      List<Vendor> vendorList = new List<Vendor> {newVendor};
+      List<Vendor> result = newVendor.GetAll();
+      CollectionAssert.AreEqual(result, vendorList);
     }
   }
 }
