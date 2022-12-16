@@ -42,5 +42,13 @@ namespace VendorAndOrderTracker.Controllers
       vendor.Orders.Add(newOrder);
       return View("Show", vendor);
     }
+
+    [HttpPost("/vendors/{vendorId}")]
+    public ActionResult Destroy(int vendorId)
+    {      
+      List<Vendor> allVendors = Vendor.GetAll();
+      allVendors.RemoveAt(vendorId - 1);
+      return RedirectToAction("Index");
+    }
   }
 }

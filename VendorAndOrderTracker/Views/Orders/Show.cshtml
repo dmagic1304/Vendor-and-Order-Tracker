@@ -3,8 +3,13 @@
 }
 
 <div class="container">
-  <h2>@Model.Title</h2>
-  <h3>@Model.Description</h3>
-  <h3>@Model.Price</h3>
-  <h3>@Model.Date</h3>
+  <h2>Order Title: @Model.Title</h2>
+  <h5>Order Description: @Model.Description</h5>
+  <h5>Order Price: $@Model.Price</h5>
+  <h5>Order Date: @Model.Date.ToLongDateString()</h5>
+  <div class="navigation">
+    <a href="javascript:window.history.back()">Back to all orders</a>    
+    <a href="/vendors">List of all Vendors</a>
+    <a href="/">Home Page</a>
+  </div>
 </div>
