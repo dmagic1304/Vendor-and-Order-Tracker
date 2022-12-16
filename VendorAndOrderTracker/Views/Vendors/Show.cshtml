@@ -7,7 +7,7 @@
 <div class="container">
   <h1>@Model.Name</h1>
 
-  @if (@Model.Orders.Count)
+  @if (@Model.Orders.Count == 0)
   {
     <h3>There are no orders for this vendor.</h3>
   }
