@@ -50,5 +50,12 @@ namespace VendorAndOrderTracker.Controllers
       allVendors.RemoveAt(vendorId - 1);
       return RedirectToAction("Index");
     }
+
+    [HttpPost("/vendors/deleteall")]
+    public ActionResult Destroy()
+    {   
+      Vendor.ClearAll();
+      return RedirectToAction("Index", "Home");
+    }
   }
 }
