@@ -3,12 +3,12 @@
 }
 
 <div class="container">
-  <h2>Order Title: @Model.Title</h2>
-  <h5>Order Description: @Model.Description</h5>
-  <h5>Order Price: $@Model.Price</h5>
-  <h5>Order Date: @Model.Date.ToLongDateString()</h5>
+  <h2>Order Title: @Model["order"].Title</h2>
+  <h5>Order Description: @Model["order"].Description</h5>
+  <h5>Order Price: $@Model["order"].Price</h5>
+  <h5>Order Date: @Model["order"].Date.ToLongDateString()</h5>
 
-  <form action="/vendors/@Model.Id" method="post"> 
+  <form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post"> 
     <button type="submit">Delete order</button>
   </form>
 
