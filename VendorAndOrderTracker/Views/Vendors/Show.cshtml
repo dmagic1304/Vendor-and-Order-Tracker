@@ -18,14 +18,14 @@
       <a href="/vendors/@Model.Id/orders/@order.Id"><li>@order.Title</li></a>
     }
   </ul>
-
-  <form action="/vendors/@Model.Id" method="post"> 
-    <button type="submit">Delete vendor</button>
-  </form>
   
   <a href='/vendors/@Model.Id/orders/new'>Add new order</a>
   <div class="navigation">
-    <a href="javascript:window.history.back()">Back to all vendors</a>
+    <a href="/vendors">Back to all vendors</a>
     <a href="/">Home Page</a>
   </div>
+  
+  <form action="/vendors/@Model.Id" method="post"> 
+    <button type="submit">Delete vendor</button>
+  </form>
 </div>
