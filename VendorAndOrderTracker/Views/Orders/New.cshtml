@@ -7,13 +7,13 @@
   <form action="/vendors/@Model.Id/orders" method="post">
     <input type="hidden" id="vendorId" name="vendorId" value="@Model.Id">
     <label for="orderTitle">Order Title</label>
-    <input type="text" id="orderTitle" name="orderTitle">
+    <input type="text" id="orderTitle" name="orderTitle" required>
     <label for="orderDescription">Order Description</label>
-    <input type="text" id="orderDescription" name="orderDescription">
+    <input type="text" id="orderDescription" name="orderDescription" required>
     <label for="orderPrice">Order Price</label>
-    <input type="number" id="orderPrice" name="orderPrice">
+    <input type="number" id="orderPrice" name="orderPrice" required>
     <label for="orderDate">Order Date</label>
-    <input type="date" id="orderDate" name="orderDate">
+    <input type="date" id="orderDate" name="orderDate" required>
     <button type="submit">Add</button>
   </form>
 </div>
